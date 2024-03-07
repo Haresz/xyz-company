@@ -1,113 +1,171 @@
-import Image from "next/image";
+import React from "react";
+import { Box, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import Marquee from "react-fast-marquee";
+
+const OurTeams = () => {
+  return (
+    <Box
+      minWidth={"800px"}
+      maxWidth={"800px"}
+      className="flex border--primary py-8 px-12 box-border mx-12"
+    >
+      <Image width={"150px"} src="founder.png" alt="Dan Abramov" />
+      <div className="flex-col ml-10">
+        <Heading className="text-primary my-6" as="h4" size="lg">
+          Vea Lenn
+        </Heading>
+        <Text className="font-medium mb-8 text-justify" fontSize="lg">
+          At XYZ Company, we have a skilled and passionate team dedicated to
+          innovation and excellence. Each member brings unique talents,
+          fostering creativity and ingenuity in tackling challenges.
+        </Text>
+        <Text className="text-primary font-medium mb-8 text-end" fontSize="lg">
+          - CEO and Founder
+        </Text>
+      </div>
+    </Box>
+  );
+};
+
+const OurTestimoni = (props: any) => {
+  return (
+    <Box
+      minWidth={"400px"}
+      maxWidth={"400px"}
+      className="flex border--primary py-8 px-16 box-border mt-12 mx-12"
+    >
+      <div className="flex-col">
+        <Text className="font-medium mb-2 text-justify" fontSize="md">
+          {props.testimoni}
+        </Text>
+        <Text className="text-primary font-medium text-end" fontSize="md">
+          {props.name}
+        </Text>
+      </div>
+    </Box>
+  );
+};
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div>
+      <Image boxSize="full" src="hero.png" alt="Dan Abramov" />
+      <div>
+        <Box className="flex justify-between items-center my-16 mx-20">
+          <Text
+            fontWeight={"semibold"}
+            textAlign={"justify"}
+            className="md:w-8/12 w-full px-8 py-10 border--primary md:text-3xl text-xl"
           >
-            By{" "}
+            "At XYZ Company, we've been leading the industry since 2005 with a
+            dedicated team of experts in technology and customer service. Our
+            culture is built on collaboration, creativity, and a passion for
+            innovation."
+          </Text>
+          <Image
+            className="hidden md:inline-block"
+            width={"16%"}
+            src="founder.png"
+            alt="Dan Abramov"
+          />
+        </Box>
+      </div>
+      <div className="our-services mx-20">
+        <Text className="text-center underline md:text-5xl text-3xl">
+          Our Services
+        </Text>
+        <div className="flex md:flex-row flex-col md:justify-between items-center mt-32">
+          <Box className="flex flex-col text-center border--primary w-fit md:py-8 py-4 md:px-32 px-16">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              className="place-self-center"
+              boxSize="300px"
+              src="smart-home.png"
             />
-          </a>
+            <Heading className="text-primary my-6" as="h4" size="lg">
+              Smart Home Solutions
+            </Heading>
+            <Text className="font-medium mb-8" w={"340px"} fontSize="lg">
+              Experience the future of home automation with our cutting-edge
+              smart home products.
+            </Text>
+          </Box>
+          <Box className="flex flex-col text-center border--primary w-fit md:py-8 py-4 md:px-32 px-16 md:mt-0 mt-8">
+            <Image
+              className="place-self-center"
+              boxSize="300px"
+              src="software.png"
+            />
+            <Heading className="text-primary my-6" as="h4" size="lg">
+              Business Software Suite
+            </Heading>
+            <Text className="font-medium mb-8" w={"340px"} fontSize="lg">
+              Streamline your operations with our comprehensive suite of
+              business software solutions.
+            </Text>
+          </Box>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="our-teams">
+        <Text className="text-center underline mt-24 mb-16" fontSize="5xl">
+          Our Teams
+        </Text>
+        <Marquee className="our-teams flex gap-12 overflow-x-scroll pb-8">
+          <OurTeams />
+          <OurTeams />
+          <OurTeams />
+        </Marquee>
+        <div className="testimoni">
+          <Marquee
+            className="bg-primary py-4 text-white text-xl font-semibold mt-40"
+            direction="right"
+          >
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+            <Text className="mx-4">Testimonial</Text>
+          </Marquee>
+        </div>
+        <div className="md:grid flex flex-col items-center md:items-stretch md:grid-rows-2   grid-flow-col gap-1">
+          <OurTestimoni
+            testimoni="XYZ Company's products are top-notch, and their team delivers excellence every time. Highly recommended!"
+            name="- Sarah"
+          />
+          <OurTestimoni
+            testimoni="Impressed by XYZ Company's professionalism and efficiency. They truly understand our needs."
+            name="- John"
+          />
+          <OurTestimoni
+            testimoni="The quality of service provided by XYZ Company is unmatched. Couldn't be happier!"
+            name="- Jack"
+          />
+          <OurTestimoni
+            testimoni="XYZ Company has revolutionized our industry with their cutting-edge solutions. A true game-changer."
+            name="- Ines"
+          />
+          <OurTestimoni
+            testimoni="From start to finish, XYZ Company exceeded our expectations. Incredible attention to detail."
+            name="- Max"
+          />
+          <OurTestimoni
+            testimoni="Choosing XYZ Company was the best decision we made for our business. Exceptional results every time."
+            name="- Rose"
+          />
+        </div>
+        <Text className="text-center mt-32 mb-16" fontSize="5xl">
+          “ Your satisfaction is our priority “
+        </Text>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
