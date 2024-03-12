@@ -1,13 +1,14 @@
 import React from "react";
 import { Box, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
+import Title from "@/components/Title";
 
 const OurTeams = () => {
   return (
     <Box
       minWidth={"800px"}
       maxWidth={"800px"}
-      className="flex border--primary py-8 px-12 box-border mx-12"
+      className="flex border--primary py-6 px-12 box-border mx-12"
     >
       <Image width={"150px"} src="founder.png" alt="Dan Abramov" />
       <div className="flex-col ml-10">
@@ -27,12 +28,12 @@ const OurTeams = () => {
   );
 };
 
-const OurTestimoni = (props: any) => {
+export const OurTestimoni = (props: any) => {
   return (
     <Box
       minWidth={"400px"}
       maxWidth={"400px"}
-      className="flex border--primary py-8 px-16 box-border mt-12 mx-12"
+      className="flex justify-center items-center border--primary py-8 px-16 box-border mt-12 mx-12"
     >
       <div className="flex-col">
         <Text className="font-medium mb-2 text-justify" fontSize="md">
@@ -71,9 +72,7 @@ export default function Home() {
         </Box>
       </div>
       <div className="our-services mx-20">
-        <Text className="text-center underline md:text-5xl text-3xl">
-          Our Services
-        </Text>
+        <Title title="Our Services" />
         <div className="flex md:flex-row flex-col md:justify-between items-center mt-32">
           <Box className="flex flex-col text-center border--primary w-fit md:py-8 py-4 md:px-32 px-16">
             <Image
@@ -105,11 +104,9 @@ export default function Home() {
           </Box>
         </div>
       </div>
-      <div className="our-teams">
-        <Text className="text-center underline mt-24 mb-16" fontSize="5xl">
-          Our Teams
-        </Text>
-        <Marquee className="our-teams flex gap-12 overflow-x-scroll pb-8">
+      <div className="our-teams mt-24">
+        <Title title="Our Teams" />
+        <Marquee className="our-teams flex gap-12 overflow-x-scroll pb-8 mt-16">
           <OurTeams />
           <OurTeams />
           <OurTeams />
