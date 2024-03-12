@@ -3,11 +3,7 @@ import { fonts } from "./fonts";
 import { Providers } from "./providers/page";
 import "./globals.css";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: any) {
   return (
     <html lang="en" className={fonts.montserrat.variable}>
       <body>

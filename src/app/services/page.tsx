@@ -35,6 +35,7 @@ export default function Srvices() {
           <Image
             boxSize={{ lg: "480px", base: "300px" }}
             src="smart-home.png"
+            alt="smart home"
           />
           <div className="desc text-primary text-justify lg:ml-20">
             <div className="w-fit font-bold">
@@ -125,7 +126,11 @@ export default function Srvices() {
       </div>
       <div className="lg:mx-20 mx-8 mb-52">
         <div className="lg:flex">
-          <Image boxSize={{ lg: "480px", base: "300px" }} src="software.png" />
+          <Image
+            alt="software"
+            boxSize={{ lg: "480px", base: "300px" }}
+            src="software.png"
+          />
           <div className="desc text-primary text-justify lg:ml-20">
             <div className="w-fit font-bold">
               <Title title="Business Software Suite" />

@@ -58,10 +58,10 @@ export default function Home() {
             textAlign={"justify"}
             className="md:w-8/12 w-full px-8 py-10 border--primary md:text-3xl text-xl"
           >
-            "At XYZ Company, we've been leading the industry since 2005 with a
-            dedicated team of experts in technology and customer service. Our
-            culture is built on collaboration, creativity, and a passion for
-            innovation."
+            &quot;At XYZ Company, we&apos;ve been leading the industry since
+            2005 with a dedicated team of experts in technology and customer
+            service. Our culture is built on collaboration, creativity, and a
+            passion for innovation.&quot;
           </Text>
           <Image
             className="hidden md:inline-block"
@@ -79,6 +79,7 @@ export default function Home() {
               className="place-self-center"
               boxSize="300px"
               src="smart-home.png"
+              alt="smart home"
             />
             <Heading className="text-primary my-6" as="h4" size="lg">
               Smart Home Solutions
@@ -93,6 +94,7 @@ export default function Home() {
               className="place-self-center"
               boxSize="300px"
               src="software.png"
+              alt="sofware"
             />
             <Heading className="text-primary my-6" as="h4" size="lg">
               Business Software Suite

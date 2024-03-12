@@ -11,7 +11,7 @@ export default function About() {
         fontWeight={"semibold"}
         textAlign={"center"}
         backgroundColor={"white"}
-        className="relative -mt-[10%] lg:w-8/12 w-auto lg:mx-auto lg:mx-20 mx-10 px-8 py-10 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-xl"
+        className="relative -mt-[10%] lg:w-8/12 w-auto  lg:mx-20 mx-10 px-8 py-10 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-xl"
       >
         XYZ Company is a company that focuses on technological innovation and
         superior service. We are committed to providing industry-leading
@@ -30,8 +30,8 @@ export default function About() {
               At XYZ Company, our vision is to become a global leader in
               innovation, providing groundbreaking solutions that transform
               industries and enrich lives. We aspire to push the boundaries of
-              what's possible, driving positive change and shaping a brighter
-              future for generations to come.
+              what&apos;s possible, driving positive change and shaping a
+              brighter future for generations to come.
             </Text>
           </Box>
           <Image
@@ -84,11 +84,11 @@ export default function About() {
           <div className="text-xl lg:ml-32 lg:mt-0 mt-10 text-justify">
             At XYZ Company, collaboration, integrity, and excellence are our
             cornerstones. We prioritize open communication, celebrate diversity,
-            and foster an environment where creativity thrives. We're more than
-            colleagues; we're a family united by our passion for innovation and
-            our commitment to making a difference. Join us and experience a
-            workplace where your talents are valued, and you're empowered to
-            succeed.
+            and foster an environment where creativity thrives. We&apos;re more
+            than colleagues; we&apos;re a family united by our passion for
+            innovation and our commitment to making a difference. Join us and
+            experience a workplace where your talents are valued, and
+            you&apos;re empowered to succeed.
           </div>
         </div>
       </div>

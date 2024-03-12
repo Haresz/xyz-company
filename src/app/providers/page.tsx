@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ChakraProvider } from "@chakra-ui/react";
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({ children }: any) {
   return (
     <ChakraProvider>
       <Navbar />
