@@ -3,7 +3,7 @@ import { Image, Text } from "@chakra-ui/react";
 
 export default function Footer() {
   return (
-    <footer className="flex md:flex-row flex-col items-baseline justify-between md:items-center bg-primary text-white py-16 px-20">
+    <footer className="flex md:flex-row flex-col items-baseline justify-between md:items-center bg-primary text-white py-16 lg:px-20 px-8">
       <Text fontWeight={"bold"} fontSize="5xl">
         XYZ Company
       </Text>

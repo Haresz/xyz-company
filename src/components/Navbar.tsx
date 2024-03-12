@@ -4,20 +4,15 @@ import {
   Box,
   Heading,
   Link,
-  Drawer,
   useDisclosure,
   Button,
-  DrawerBody,
-  DrawerContent,
-  DrawerHeader,
-  DrawerOverlay,
   Icon,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import "../app/globals.css";
 
 const LinkCustom = (props: any) => {
@@ -33,7 +28,7 @@ export default function Navbar() {
 
   return (
     <HStack
-      className="md:px-20 px-12"
+      className="md:px-20 px-8"
       justifyContent="space-between"
       bg="white"
       boxShadow="md"
@@ -45,7 +40,7 @@ export default function Navbar() {
       <Box className="hidden md:inline-block font-semibold text-base menus text-primary space-x-8">
         <LinkCustom title="Home" link="/" />
         <LinkCustom title="About" link="/about" />
-        <LinkCustom title="Services" link="/servoces" />
+        <LinkCustom title="Services" link="/services" />
       </Box>
       <div className="md:hidden inline-block">
         <Menu>
@@ -61,7 +56,7 @@ export default function Navbar() {
               <LinkCustom title="About" link="/about" />
             </MenuItem>
             <MenuItem>
-              <LinkCustom title="Services" link="/servoces" />
+              <LinkCustom title="Services" link="/services" />
             </MenuItem>
           </MenuList>
         </Menu>

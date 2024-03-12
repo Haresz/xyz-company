@@ -11,13 +11,13 @@ export default function About() {
         fontWeight={"semibold"}
         textAlign={"center"}
         backgroundColor={"white"}
-        className="relative -mt-[10%] lg:w-8/12 w-auto lg:mx-auto mx-20 px-8 py-10 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-xl"
+        className="relative -mt-[10%] lg:w-8/12 w-auto lg:mx-auto lg:mx-20 mx-10 px-8 py-10 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-xl"
       >
         XYZ Company is a company that focuses on technological innovation and
         superior service. We are committed to providing industry-leading
         solutions and serving customers with unmatched excellence.
       </Text>
-      <div className="lg:flex justify-center mx-20">
+      <div className="lg:flex justify-center lg:mx-20 mx-10">
         <div className="vision flex-1">
           <Box
             fontWeight={"semibold"}
@@ -62,7 +62,7 @@ export default function About() {
           </Box>
         </div>
       </div>
-      <div className="our-culture mt-52 text-start mx-20 mb-52">
+      <div className="our-culture mt-52 text-start lg:mx-20 mx-10 mb-52">
         <div className="w-fit mb-6">
           <Title title="Our Culture" />
         </div>
@@ -93,7 +93,7 @@ export default function About() {
         </div>
       </div>
       <div className="our-teams mb-52">
-        <div className="w-fit mb-6 mx-20">
+        <div className="w-fit mb-6 lg:mx-20 mx-10">
           <Title title="Our Teams" />
         </div>
         <div className="lg:grid flex flex-col items-center lg:items-stretch lg:grid-rows-2  grid-flow-col gap-1">
