@@ -11,7 +11,7 @@ export default function About() {
         fontWeight={"semibold"}
         textAlign={"center"}
         backgroundColor={"white"}
-        className="relative -mt-[10%] lg:w-8/12 w-auto  lg:mx-20 mx-10 px-8 py-10 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-xl"
+        className="relative -mt-[10%] lg:w-8/12 w-auto  lg:mx-auto mx-10 px-8 py-10 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-xl"
       >
         XYZ Company is a company that focuses on technological innovation and
         superior service. We are committed to providing industry-leading
