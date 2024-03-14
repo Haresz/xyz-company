@@ -1,7 +1,7 @@
+import OurTestimoni from "@/components/OurTestimonial";
 import Title from "@/components/Title";
 import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import { OurTestimoni } from "../page";
 
 export default function About() {
   return (

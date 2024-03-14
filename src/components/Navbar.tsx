@@ -41,6 +41,7 @@ export default function Navbar() {
         <LinkCustom title="Home" link="/" />
         <LinkCustom title="About" link="/about" />
         <LinkCustom title="Services" link="/services" />
+        <LinkCustom title="Our Teams" link="/our-teams" />
       </Box>
       <div className="md:hidden inline-block">
         <Menu>
@@ -57,6 +58,9 @@ export default function Navbar() {
             </MenuItem>
             <MenuItem>
               <LinkCustom title="Services" link="/services" />
+            </MenuItem>
+            <MenuItem>
+              <LinkCustom title="Our Teams" link="/our-teams" />
             </MenuItem>
           </MenuList>
         </Menu>

@@ -1,53 +1,18 @@
+"use client";
 import React from "react";
 import { Box, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
 import Title from "@/components/Title";
-
-const OurTeams = () => {
-  return (
-    <Box
-      minWidth={"800px"}
-      maxWidth={"800px"}
-      className="flex border--primary py-6 px-12 box-border mx-12"
-    >
-      <Image width={"150px"} src="founder.png" alt="Dan Abramov" />
-      <div className="flex-col ml-10">
-        <Heading className="text-primary my-6" as="h4" size="lg">
-          Vea Lenn
-        </Heading>
-        <Text className="font-medium mb-8 text-justify" fontSize="lg">
-          At XYZ Company, we have a skilled and passionate team dedicated to
-          innovation and excellence. Each member brings unique talents,
-          fostering creativity and ingenuity in tackling challenges.
-        </Text>
-        <Text className="text-primary font-medium mb-8 text-end" fontSize="lg">
-          - CEO and Founder
-        </Text>
-      </div>
-    </Box>
-  );
-};
-
-export const OurTestimoni = (props: any) => {
-  return (
-    <Box
-      minWidth={"400px"}
-      maxWidth={"400px"}
-      className="flex justify-center items-center border--primary py-8 px-16 box-border mt-12 mx-12"
-    >
-      <div className="flex-col">
-        <Text className="font-medium mb-2 text-justify" fontSize="md">
-          {props.testimoni}
-        </Text>
-        <Text className="text-primary font-medium text-end" fontSize="md">
-          {props.name}
-        </Text>
-      </div>
-    </Box>
-  );
-};
+import { getDataTeams } from "@/api/teams";
+import { useQuery } from "react-query";
+import OurTeams from "@/components/OurTeams";
+import OurTestimoni from "@/components/OurTestimonial";
 
 export default function Home() {
+  const { data, error, isLoading } = useQuery("post", async () => {
+    const res = await getDataTeams(6);
+    return res;
+  });
   return (
     <div>
       <Image boxSize="full" src="hero.png" alt="Dan Abramov" />
@@ -109,9 +74,14 @@ export default function Home() {
       <div className="our-teams mt-24">
         <Title title="Our Teams" />
         <Marquee className="our-teams flex gap-12 overflow-x-scroll pb-8 mt-16">
-          <OurTeams />
-          <OurTeams />
-          <OurTeams />
+          {data?.data.results.map((item: any) => {
+            return (
+              <OurTeams
+                img={item.picture.large}
+                name={`${item.name.first} ${item.name.first} ${item.name.last}`}
+              />
+            );
+          })}
         </Marquee>
         <div className="testimoni">
           <Marquee
@@ -136,30 +106,14 @@ export default function Home() {
           </Marquee>
         </div>
         <div className="md:grid flex flex-col items-center md:items-stretch md:grid-rows-2   grid-flow-col gap-1">
-          <OurTestimoni
-            testimoni="XYZ Company's products are top-notch, and their team delivers excellence every time. Highly recommended!"
-            name="- Sarah"
-          />
-          <OurTestimoni
-            testimoni="Impressed by XYZ Company's professionalism and efficiency. They truly understand our needs."
-            name="- John"
-          />
-          <OurTestimoni
-            testimoni="The quality of service provided by XYZ Company is unmatched. Couldn't be happier!"
-            name="- Jack"
-          />
-          <OurTestimoni
-            testimoni="XYZ Company has revolutionized our industry with their cutting-edge solutions. A true game-changer."
-            name="- Ines"
-          />
-          <OurTestimoni
-            testimoni="From start to finish, XYZ Company exceeded our expectations. Incredible attention to detail."
-            name="- Max"
-          />
-          <OurTestimoni
-            testimoni="Choosing XYZ Company was the best decision we made for our business. Exceptional results every time."
-            name="- Rose"
-          />
+          {data?.data.results.map((item: any) => {
+            return (
+              <OurTestimoni
+                testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta explicabo consectetur adipisci. Dignissimos, hic asperiores."
+                name={`- ${item.name.first}`}
+              />
+            );
+          })}
         </div>
         <Text className="text-center mt-32 mb-16" fontSize="5xl">
           “ Your satisfaction is our priority “
