@@ -37,27 +37,28 @@ function CardTeam(props: any) {
 }
 
 export default function Teams() {
-  // const teams: any = useAppSelector(
-  //   (state: RootState) => state.teamsSlice.teams
-  // );
-  // const dispatch = UseAppDispatch();
+  const teams: any = useAppSelector(
+    (state: RootState) => state.teamsSlice.teams
+  );
+
+  const dispatch = UseAppDispatch();
   const { data, error, isLoading } = useQuery("post", async () => {
-    const res = await getDataTeams(16);
+    const res = await dispatch(actionGetTeams(16));
     return res;
   });
-
-  // useEffect(() => {
-  //   dispatch(actionGetTeams());
-  // }, []);
-
-  // console.log(data?.data.results);
 
   return (
     <div>
       <Image boxSize="full" src="hero-teams.png" alt="Dan Abramov" />
       <div className="flex flex-wrap justify-center my-52">
-        {data?.data.results.map((item: any) => {
-          return <CardTeam img={item.picture.large} name={item.name.first} />;
+        {teams.map((item: any, index: number) => {
+          return (
+            <CardTeam
+              key={index}
+              img={item.picture.large}
+              name={item.name.first}
+            />
+          );
         })}
       </div>
     </div>

@@ -7,12 +7,20 @@ import { getDataTeams } from "@/api/teams";
 import { useQuery } from "react-query";
 import OurTeams from "@/components/OurTeams";
 import OurTestimoni from "@/components/OurTestimonial";
+import { UseAppDispatch, useAppSelector } from "@/lib/hooks";
+import { actionGetTeams } from "@/lib/features/teams/teamsSlice";
+import { RootState } from "@/lib/store";
 
 export default function Home() {
+  const teams: any = useAppSelector(
+    (state: RootState) => state.teamsSlice.teams
+  );
+  const dispatch = UseAppDispatch();
   const { data, error, isLoading } = useQuery("post", async () => {
-    const res = await getDataTeams(6);
+    const res = await dispatch(actionGetTeams(16));
     return res;
   });
+  console.log(data, teams);
   return (
     <div>
       <Image boxSize="full" src="hero.png" alt="Dan Abramov" />
@@ -74,13 +82,17 @@ export default function Home() {
       <div className="our-teams mt-24">
         <Title title="Our Teams" />
         <Marquee className="our-teams flex gap-12 overflow-x-scroll pb-8 mt-16">
-          {data?.data.results.map((item: any) => {
-            return (
-              <OurTeams
-                img={item.picture.large}
-                name={`${item.name.first} ${item.name.first} ${item.name.last}`}
-              />
-            );
+          {teams.map((item: any, index: number) => {
+            console.log(index);
+            if (index < 7) {
+              return (
+                <OurTeams
+                  key={index}
+                  img={item.picture.large}
+                  name={`${item.name.first} ${item.name.first} ${item.name.last}`}
+                />
+              );
+            }
           })}
         </Marquee>
         <div className="testimoni">
@@ -106,14 +118,17 @@ export default function Home() {
           </Marquee>
         </div>
         <div className="md:grid flex flex-col items-center md:items-stretch md:grid-rows-2   grid-flow-col gap-1">
-          {data?.data.results.map((item: any) => {
-            return (
-              <OurTestimoni
-                testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta explicabo consectetur adipisci. Dignissimos, hic asperiores."
-                name={`- ${item.name.first}`}
-              />
-            );
-          })}
+          {teams
+            .filter((item: any, index: number) => index < 6)
+            .map((item: any, index: number) => {
+              return (
+                <OurTestimoni
+                  key={index}
+                  testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta explicabo consectetur adipisci. Dignissimos, hic asperiores."
+                  name={`- ${item.name.first}`}
+                />
+              );
+            })}
         </div>
         <Text className="text-center mt-32 mb-16" fontSize="5xl">
           “ Your satisfaction is our priority “

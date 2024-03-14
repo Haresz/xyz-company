@@ -3,7 +3,6 @@ import {
   HStack,
   Box,
   Heading,
-  Link,
   useDisclosure,
   Button,
   Icon,
@@ -14,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import "../app/globals.css";
+import Link from "next/link";
 
 const LinkCustom = (props: any) => {
   return (

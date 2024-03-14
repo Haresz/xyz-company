@@ -6,10 +6,13 @@ const initialState: any = {
   teams: [],
 };
 
-const actionGetTeams = createAsyncThunk("teams/actionGetTeams", async () => {
-  const response = await getDataTeams();
-  return response.data.results;
-});
+const actionGetTeams = createAsyncThunk(
+  "teams/actionGetTeams",
+  async (qty: number) => {
+    const response = await getDataTeams(qty);
+    return response.data.results;
+  }
+);
 
 export const teamsSlice = createSlice({
   name: "teamsSlice",
