@@ -41,11 +41,11 @@ export default function Teams() {
     (state: RootState) => state.teamsSlice.teams
   );
 
-  const dispatch = UseAppDispatch();
-  const { data, error, isLoading } = useQuery("post", async () => {
-    const res = await dispatch(actionGetTeams(16));
-    return res;
-  });
+  // const dispatch = UseAppDispatch();
+  // const { data, error, isLoading } = useQuery("post", async () => {
+  //   const res = await dispatch(actionGetTeams(16));
+  //   return res;
+  // });
 
   return (
     <div>

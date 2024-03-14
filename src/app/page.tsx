@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
 import Title from "@/components/Title";
@@ -16,11 +16,14 @@ export default function Home() {
     (state: RootState) => state.teamsSlice.teams
   );
   const dispatch = UseAppDispatch();
-  const { data, error, isLoading } = useQuery("post", async () => {
-    const res = await dispatch(actionGetTeams(16));
-    return res;
-  });
-  console.log(data, teams);
+  // const { data, error, isLoading } = useQuery("post", async () => {
+  //   const res = await dispatch(actionGetTeams(16));
+  //   return res;
+  // });
+
+  useEffect(() => {
+    dispatch(actionGetTeams(16));
+  }, []);
   return (
     <div>
       <Image boxSize="full" src="hero.png" alt="Dan Abramov" />
