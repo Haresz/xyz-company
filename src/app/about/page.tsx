@@ -8,16 +8,19 @@ export default function About() {
   return (
     <div>
       <Hero src={"hero-about.png"} />
-      <Text
-        fontWeight={"semibold"}
-        textAlign={"center"}
-        backgroundColor={"white"}
-        className="relative -mt-[10%] lg:w-8/12 w-auto lg:px-8 px-4 mx-auto md:py-10 py-5 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-lg"
-      >
-        XYZ Company is a company that focuses on technological innovation and
-        superior service. We are committed to providing industry-leading
-        solutions and serving customers with unmatched excellence.
-      </Text>
+      <div className="mx-20">
+        <Text
+          fontWeight={"semibold"}
+          textAlign={"center"}
+          backgroundColor={"white"}
+          className="relative -mt-[10%] lg:w-8/12 w-auto lg:px-8 px-4 mx-auto md:py-10 py-5 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-lg"
+        >
+          XYZ Company is a company that focuses on technological innovation and
+          superior service. We are committed to providing industry-leading
+          solutions and serving customers with unmatched excellence.
+        </Text>
+      </div>
+
       <div className="lg:flex justify-center lg:mx-20 mx-10">
         <div className="vision flex-1">
           <Box
