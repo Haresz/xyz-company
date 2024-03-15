@@ -8,7 +8,7 @@ const initialState: any = {
 
 const actionGetTeams = createAsyncThunk(
   "teams/actionGetTeams",
-  async (qty: number) => {
+  async (qty: any) => {
     const response = await getDataTeams(qty);
     return response.data.results;
   }
@@ -25,5 +25,5 @@ export const teamsSlice = createSlice({
   },
 });
 
-export { actionGetTeams };
+export { actionGetTeams, initialState };
 export default teamsSlice.reducer;

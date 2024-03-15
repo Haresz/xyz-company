@@ -1,7 +1,6 @@
 import React from "react";
-import { Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import Title from "@/components/Title";
-import Image from "next/image";
 
 function Pakacge(props: any) {
   return (
@@ -31,18 +30,19 @@ export default function Srvices() {
   return (
     <div>
       <Image
-        layout="fill"
-        className="w-full"
+        loading="lazy"
+        boxSize="full"
         src="hero-services.png"
         alt="Dan Abramov"
+        fallback={<Box className="w-full h-96 bg-gray-400 animate-pulse" />}
       />
       <div className="lg:mx-20 mx-8 mt-20">
         <div className="lg:flex">
           <Image
-            layout="fill"
-            className="w-[300px] lg:w-[480px]"
+            width={{ lg: "480px", base: "300px" }}
             src="smart-home.png"
             alt="smart home"
+            loading="lazy"
           />
           <div className="desc text-primary text-justify lg:ml-20">
             <div className="w-fit font-bold">
@@ -135,9 +135,9 @@ export default function Srvices() {
         <div className="lg:flex">
           <Image
             alt="software"
-            layout="fill"
-            className="w-[300px] lg:w-[480px]"
+            boxSize={{ lg: "480px", base: "300px" }}
             src="software.png"
+            loading="eager"
           />
           <div className="desc text-primary text-justify lg:ml-20">
             <div className="w-fit font-bold">

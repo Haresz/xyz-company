@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import teamsSlice from "./features/teams/teamsSlice";
+export const dynamic = "force-dynamic";
 
 export const makeStore = () => {
   return configureStore({

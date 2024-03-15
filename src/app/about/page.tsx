@@ -6,7 +6,12 @@ import React from "react";
 export default function About() {
   return (
     <div>
-      <Image boxSize="full" src="hero-about.png" alt="Dan Abramov" />
+      <Image
+        boxSize="full"
+        src="hero-about.png"
+        alt="Dan Abramov"
+        fallback={<Box className="w-full h-96 bg-gray-400 animate-pulse" />}
+      />
       <Text
         fontWeight={"semibold"}
         textAlign={"center"}

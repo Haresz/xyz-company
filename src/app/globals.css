@@ -5,3 +5,15 @@
 .border--primary {
   @apply border-2 border-primary rounded-lg;
 }
+
+.image-container {
+  width: 100%;
+  position: unset !important;
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}

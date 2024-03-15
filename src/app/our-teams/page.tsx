@@ -1,11 +1,8 @@
 "use client";
-import { getDataTeams } from "@/api/teams";
-import { UseAppDispatch, useAppSelector } from "@/lib/hooks";
 import { Box, Heading, Image, Text } from "@chakra-ui/react";
-import React, { useEffect } from "react";
-import { useQuery } from "react-query";
+import React from "react";
 import { RootState } from "@/lib/store";
-import { actionGetTeams } from "@/lib/features/teams/teamsSlice";
+import { useSelector } from "react-redux";
 
 function CardTeam(props: any) {
   return (
@@ -37,19 +34,17 @@ function CardTeam(props: any) {
 }
 
 export default function Teams() {
-  const teams: any = useAppSelector(
-    (state: RootState) => state.teamsSlice.teams
-  );
-
-  // const dispatch = UseAppDispatch();
-  // const { data, error, isLoading } = useQuery("post", async () => {
-  //   const res = await dispatch(actionGetTeams(16));
-  //   return res;
-  // });
-
+  // const store = useAppStore();
+  // const initialized = useRef(false);
+  const teams: any = useSelector((state: RootState) => state.teamsSlice.teams);
   return (
     <div>
-      <Image boxSize="full" src="hero-teams.png" alt="Dan Abramov" />
+      <Image
+        boxSize="full"
+        src="hero-teams.png"
+        alt="Dan Abramov"
+        fallback={<Box className="w-full h-96 bg-gray-400 animate-pulse" />}
+      />
       <div className="flex flex-wrap justify-center my-52">
         {teams.map((item: any, index: number) => {
           return (

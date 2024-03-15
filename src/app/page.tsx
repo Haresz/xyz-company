@@ -1,32 +1,34 @@
 "use client";
-import React, { useEffect } from "react";
-import { Box, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import React, { useRef } from "react";
+import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
 import Title from "@/components/Title";
-import { getDataTeams } from "@/api/teams";
 import { useQuery } from "react-query";
 import OurTeams from "@/components/OurTeams";
 import OurTestimoni from "@/components/OurTestimonial";
-import { UseAppDispatch, useAppSelector } from "@/lib/hooks";
 import { actionGetTeams } from "@/lib/features/teams/teamsSlice";
 import { RootState } from "@/lib/store";
+import { useDispatch, useSelector } from "react-redux";
+import { useAppStore } from "@/lib/hooks";
 
 export default function Home() {
-  const teams: any = useAppSelector(
-    (state: RootState) => state.teamsSlice.teams
-  );
-  const dispatch = UseAppDispatch();
-  // const { data, error, isLoading } = useQuery("post", async () => {
-  //   const res = await dispatch(actionGetTeams(16));
-  //   return res;
-  // });
+  const teams: any = useSelector((state: RootState) => state.teamsSlice.teams);
+  const store = useAppStore();
+  const initialized = useRef(false);
+  const { data, error, isLoading } = useQuery("post", async () => {
+    const res = await store.dispatch(actionGetTeams(16));
+    initialized.current = true;
+    return res;
+  });
 
-  useEffect(() => {
-    dispatch(actionGetTeams(16));
-  }, []);
   return (
     <div>
-      <Image boxSize="full" src="hero.png" alt="Dan Abramov" />
+      <Image
+        boxSize="full"
+        src="/hero.png"
+        alt="Dan Abramov"
+        fallback={<Box className="w-full h-96 bg-gray-400 animate-pulse" />}
+      />
       <div>
         <Box className="flex justify-between items-center my-16 mx-20">
           <Text
@@ -121,17 +123,25 @@ export default function Home() {
           </Marquee>
         </div>
         <div className="md:grid flex flex-col items-center md:items-stretch md:grid-rows-2   grid-flow-col gap-1">
-          {teams
-            .filter((item: any, index: number) => index < 6)
-            .map((item: any, index: number) => {
-              return (
-                <OurTestimoni
-                  key={index}
-                  testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta explicabo consectetur adipisci. Dignissimos, hic asperiores."
-                  name={`- ${item.name.first}`}
-                />
-              );
-            })}
+          {!isLoading ? (
+            teams
+              .filter((item: any, index: number) => index < 6)
+              .map((item: any, index: number) => {
+                return (
+                  <OurTestimoni
+                    key={index}
+                    testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta explicabo consectetur adipisci. Dignissimos, hic asperiores."
+                    name={`- ${item.name.first}`}
+                  />
+                );
+              })
+          ) : (
+            <Box
+              minWidth={"400px"}
+              maxWidth={"400px"}
+              className=" bg-gray-400 animate-pulse"
+            />
+          )}
         </div>
         <Text className="text-center mt-32 mb-16" fontSize="5xl">
           “ Your satisfaction is our priority “
