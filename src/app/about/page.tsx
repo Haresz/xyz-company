@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import OurTestimoni from "@/components/OurTestimonial";
 import Title from "@/components/Title";
 import { Box, Image, Text } from "@chakra-ui/react";
@@ -6,17 +7,12 @@ import React from "react";
 export default function About() {
   return (
     <div>
-      <Image
-        boxSize="full"
-        src="hero-about.png"
-        alt="Dan Abramov"
-        fallback={<Box className="w-full h-96 bg-gray-400 animate-pulse" />}
-      />
+      <Hero src={"hero-about.png"} />
       <Text
         fontWeight={"semibold"}
         textAlign={"center"}
         backgroundColor={"white"}
-        className="relative -mt-[10%] lg:w-8/12 w-auto  lg:mx-auto mx-10 px-8 py-10 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-xl"
+        className="relative -mt-[10%] lg:w-8/12 w-auto lg:px-8 px-4 mx-auto md:py-10 py-5 lg:mb-52 mb-32 border-2 border--primary lg:text-3xl text-lg"
       >
         XYZ Company is a company that focuses on technological innovation and
         superior service. We are committed to providing industry-leading

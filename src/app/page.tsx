@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { useAppStore } from "@/lib/hooks";
 import Testimoni from "@/components/Testimoni";
 import OurServises from "@/components/OurServises";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   const teams: any = useSelector((state: RootState) => state.teamsSlice.teams);
@@ -22,12 +23,7 @@ export default function Home() {
 
   return (
     <div>
-      <Image
-        boxSize="full"
-        src="hero.png"
-        alt="Dan Abramov"
-        fallback={<Box className="w-full h-64 bg-gray-400 animate-pulse" />}
-      />
+      <Hero src={"hero.png"} />
       <div>
         <Box className="flex justify-between items-center my-16 md:mx-20 mx-6">
           <Text
