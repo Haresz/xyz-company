@@ -8,8 +8,9 @@ import OurTeams from "@/components/OurTeams";
 import OurTestimoni from "@/components/OurTestimonial";
 import { actionGetTeams } from "@/lib/features/teams/teamsSlice";
 import { RootState } from "@/lib/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useAppStore } from "@/lib/hooks";
+import Testimoni from "@/components/Testimoni";
 
 export default function Home() {
   const teams: any = useSelector((state: RootState) => state.teamsSlice.teams);
@@ -25,9 +26,9 @@ export default function Home() {
     <div>
       <Image
         boxSize="full"
-        src="/hero.png"
+        src="hero.png"
         alt="Dan Abramov"
-        fallback={<Box className="w-full h-96 bg-gray-400 animate-pulse" />}
+        fallback={<Box className="w-full h-64 bg-gray-400 animate-pulse" />}
       />
       <div>
         <Box className="flex justify-between items-center my-16 md:mx-20 mx-6">
@@ -100,49 +101,7 @@ export default function Home() {
             }
           })}
         </Marquee>
-        <div className="testimoni">
-          <Marquee
-            className="bg-primary py-4 text-white text-xl font-semibold mt-40"
-            direction="right"
-          >
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-            <Text className="mx-4">Testimonial</Text>
-          </Marquee>
-        </div>
-        <div className="lg:grid flex flex-col items-center lg:items-stretch lg:grid-rows-2 grid-flow-col gap-1">
-          {!isLoading ? (
-            teams
-              .filter((item: any, index: number) => index < 6)
-              .map((item: any, index: number) => {
-                return (
-                  <OurTestimoni
-                    key={index}
-                    testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta explicabo consectetur adipisci. Dignissimos, hic asperiores."
-                    name={`- ${item.name.first}`}
-                  />
-                );
-              })
-          ) : (
-            <Box
-              minWidth={"400px"}
-              maxWidth={"400px"}
-              className=" bg-gray-400 animate-pulse"
-            />
-          )}
-        </div>
+        <Testimoni datas={teams} />
         <Text
           className="text-center mt-32 mb-16"
           fontSize={{ lg: "5xl", base: "3xl" }}

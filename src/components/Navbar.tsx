@@ -46,7 +46,7 @@ export default function Navbar() {
       <div className="md:hidden inline-block">
         <Menu>
           <MenuButton colorScheme="messenger" as={Button}>
-            <Icon as={HamburgerIcon} />
+            Menus
           </MenuButton>
           <MenuList className="font-semibold text-base menus text-primary">
             <MenuItem>

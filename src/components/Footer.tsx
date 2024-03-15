@@ -15,10 +15,25 @@ export default function Footer() {
           Smart Home Solution
         </Text>
         <Text fontSize="lg">Businise Sofware Suite</Text>
-        <div className="flex justify-between mt-4 ">
-          <Image width={"30px"} src="facebook.png" alt="Dan Abramov" />
-          <Image width={"30px"} src="instagram.png" alt="Dan Abramov" />
-          <Image width={"30px"} src="linkin.png" alt="Dan Abramov" />
+        <div className="flex justify-between mt-4 w-full">
+          <Image
+            width={"30px"}
+            height={"30px"}
+            src="facebook.png"
+            alt="Dan Abramov"
+          />
+          <Image
+            width={"30px"}
+            height={"30px"}
+            src="instagram.png"
+            alt="Dan Abramov"
+          />
+          <Image
+            width={"30px"}
+            height={"30px"}
+            src="linkin.png"
+            alt="Dan Abramov"
+          />
         </div>
       </div>
       <div className="flex flex-col self-start md:mt-0 mt-20">
