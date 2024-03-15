@@ -30,11 +30,11 @@ export default function Home() {
         fallback={<Box className="w-full h-96 bg-gray-400 animate-pulse" />}
       />
       <div>
-        <Box className="flex justify-between items-center my-16 mx-20">
+        <Box className="flex justify-between items-center my-16 md:mx-20 mx-6">
           <Text
             fontWeight={"semibold"}
             textAlign={"justify"}
-            className="md:w-8/12 w-full px-8 py-10 border--primary md:text-3xl text-xl"
+            className="md:w-8/12 w-full lg:px-8 px-4 mx-auto md:py-10 py-5 border--primary md:text-3xl text-lg"
           >
             &quot;At XYZ Company, we&apos;ve been leading the industry since
             2005 with a dedicated team of experts in technology and customer
@@ -42,7 +42,7 @@ export default function Home() {
             passion for innovation.&quot;
           </Text>
           <Image
-            className="hidden md:inline-block"
+            className="hidden lg:inline-block"
             width={"16%"}
             src="founder.png"
             alt="Dan Abramov"
@@ -51,8 +51,8 @@ export default function Home() {
       </div>
       <div className="our-services mx-20">
         <Title title="Our Services" />
-        <div className="flex md:flex-row flex-col md:justify-between items-center mt-32">
-          <Box className="flex flex-col text-center border--primary w-fit md:py-8 py-4 md:px-32 px-16">
+        <div className="flex lg:flex-row flex-col md:justify-between items-center mt-32">
+          <Box className="flex flex-col text-center border--primary w-fit md:py-8 py-4 md:px-32 px-8">
             <Image
               className="place-self-center"
               boxSize="300px"
@@ -67,7 +67,7 @@ export default function Home() {
               smart home products.
             </Text>
           </Box>
-          <Box className="flex flex-col text-center border--primary w-fit md:py-8 py-4 md:px-32 px-16 md:mt-0 mt-8">
+          <Box className="flex flex-col text-center border--primary w-fit md:py-8 py-4 md:px-32 px-8 md:mt-0 mt-8">
             <Image
               className="place-self-center"
               boxSize="300px"
@@ -122,7 +122,7 @@ export default function Home() {
             <Text className="mx-4">Testimonial</Text>
           </Marquee>
         </div>
-        <div className="md:grid flex flex-col items-center md:items-stretch md:grid-rows-2   grid-flow-col gap-1">
+        <div className="lg:grid flex flex-col items-center lg:items-stretch lg:grid-rows-2 grid-flow-col gap-1">
           {!isLoading ? (
             teams
               .filter((item: any, index: number) => index < 6)
@@ -143,7 +143,10 @@ export default function Home() {
             />
           )}
         </div>
-        <Text className="text-center mt-32 mb-16" fontSize="5xl">
+        <Text
+          className="text-center mt-32 mb-16"
+          fontSize={{ lg: "5xl", base: "3xl" }}
+        >
           “ Your satisfaction is our priority “
         </Text>
       </div>
