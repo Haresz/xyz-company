@@ -11,7 +11,7 @@ export default function OurServises() {
           <Image
             className="place-self-center"
             boxSize="300px"
-            src="smart-home.png"
+            src="smart-home.webp"
             alt="smart home"
           />
           <Heading className="text-primary my-6" as="h4" size="lg">
@@ -26,7 +26,7 @@ export default function OurServises() {
           <Image
             className="place-self-center"
             boxSize="300px"
-            src="software.png"
+            src="software.webp"
             alt="sofware"
           />
           <Heading className="text-primary my-6" as="h4" size="lg">

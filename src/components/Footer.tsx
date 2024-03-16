@@ -19,19 +19,19 @@ export default function Footer() {
           <Image
             width={"30px"}
             height={"30px"}
-            src="facebook.png"
+            src="facebook.webp"
             alt="Dan Abramov"
           />
           <Image
             width={"30px"}
             height={"30px"}
-            src="instagram.png"
+            src="instagram.webp"
             alt="Dan Abramov"
           />
           <Image
             width={"30px"}
             height={"30px"}
-            src="linkin.png"
+            src="linkin.webp"
             alt="Dan Abramov"
           />
         </div>

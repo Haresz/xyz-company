@@ -9,7 +9,7 @@ export default function Teams() {
   const teams: any = useSelector((state: RootState) => state.teamsSlice.teams);
   return (
     <div>
-      <Hero src="hero-teams.png" />
+      <Hero src="hero-teams.webp" />
       <div className="flex flex-wrap justify-center my-52">
         {teams.map((item: any, index: number) => {
           return (

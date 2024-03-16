@@ -7,12 +7,12 @@ import Pakacge from "@/components/Pakacge";
 export default function Srvices() {
   return (
     <div>
-      <Hero src="hero-services.png" />
+      <Hero src="hero-services.webp" />
       <div className="lg:mx-20 mx-8 mt-20">
         <div className="lg:flex">
           <Image
             width={{ lg: "480px", base: "300px" }}
-            src="smart-home.png"
+            src="smart-home.webp"
             alt="smart home"
             loading="lazy"
           />
@@ -108,7 +108,7 @@ export default function Srvices() {
           <Image
             alt="software"
             boxSize={{ lg: "480px", base: "300px" }}
-            src="software.png"
+            src="software.webp"
             loading="eager"
           />
           <div className="desc text-primary text-justify lg:ml-20">

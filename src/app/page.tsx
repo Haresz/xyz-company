@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <div>
-      <Hero src={"hero.png"} />
+      <Hero src={"hero.webp"} />
       <div>
         <Box className="flex justify-between items-center my-16 md:mx-20 mx-6">
           <Text
@@ -39,7 +39,7 @@ export default function Home() {
           <Image
             className="hidden lg:inline-block"
             width={"16%"}
-            src="founder.png"
+            src="founder.webp"
             alt="Dan Abramov"
           />
         </Box>

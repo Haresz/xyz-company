@@ -10,7 +10,7 @@ import OurTeams from "./component/OurTeams";
 export default function About() {
   return (
     <div>
-      <Hero src={"hero-about.png"} />
+      <Hero src={"hero-about.webp"} />
       <div className="mx-20">
         <Text
           fontWeight={"semibold"}

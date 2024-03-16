@@ -23,7 +23,7 @@ export default function VisionMision() {
         </Box>
         <Image
           className="w-full my-10 lg:inline-block hidden"
-          src="mision.png"
+          src="mision.webp"
           alt="Dan Abramov"
           fallback={<Box className="h-auto w-auto bg-gray-400 animate-pulse" />}
         />
@@ -31,7 +31,7 @@ export default function VisionMision() {
       <div className="mision flex-1 lg:mt-0 mt-16">
         <Image
           className="h-auto w-auto my-10 lg:inline-block hidden"
-          src="vision.png"
+          src="vision.webp"
           alt="Dan Abramov"
           fallback={<Box className="h-auto w-auto bg-gray-400 animate-pulse" />}
         />
