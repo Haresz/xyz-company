@@ -1,25 +1,32 @@
 "use client";
-import React, { useRef } from "react";
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import React, { useEffect, useRef } from "react";
+import { Box, Image, Text } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
 import Title from "@/components/Title";
 import OurTeams from "@/components/OurTeams";
 import { actionGetTeams } from "@/lib/features/teams/teamsSlice";
 import { RootState } from "@/lib/store";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useAppStore } from "@/lib/hooks";
 import Testimoni from "@/components/Testimoni";
 import OurServises from "@/components/OurServises";
 import Hero from "@/components/Hero";
 
+const IMAGE_SIZE = "16%";
+const INITIAL_TEAM_COUNT = 7;
+
 export default function Home() {
-  const teams: any = useSelector((state: RootState) => state.teamsSlice.teams);
+  const teams = useSelector((state: RootState) => state.teamsSlice.teams);
+  const dispatch = useDispatch();
   const store = useAppStore();
-  const initialized: any = useRef(false);
-  if (!initialized) {
-    store.dispatch(actionGetTeams(16));
-    initialized.current = true;
-  }
+  const initialized = useRef(false);
+
+  useEffect(() => {
+    if (!initialized.current) {
+      store.dispatch(actionGetTeams(16));
+      initialized.current = true;
+    }
+  }, [dispatch]);
 
   return (
     <div>
@@ -29,7 +36,7 @@ export default function Home() {
           <Text
             fontWeight={"semibold"}
             textAlign={"justify"}
-            className="md:w-8/12 w-full lg:px-8 px-4 mx-auto md:py-10 py-5 border--primary md:text-3xl text-lg"
+            className="md:w-8/12 w-full lg:px-8 px-4 mx-auto md:py-10 py-5 border--primary md:text-3xl text-md"
           >
             &quot;At XYZ Company, we&apos;ve been leading the industry since
             2005 with a dedicated team of experts in technology and customer
@@ -38,7 +45,7 @@ export default function Home() {
           </Text>
           <Image
             className="hidden lg:inline-block"
-            width={"16%"}
+            width={IMAGE_SIZE}
             src="founder.webp"
             alt="Dan Abramov"
           />
@@ -48,18 +55,15 @@ export default function Home() {
       <div className="our-teams mt-24">
         <Title title="Our Teams" />
         <Marquee className="our-teams flex gap-12 overflow-x-scroll pb-8 mt-16">
-          {teams.map((item: any, index: number) => {
-            console.log(index);
-            if (index < 7) {
-              return (
-                <OurTeams
-                  key={index}
-                  img={item.picture.large}
-                  name={`${item.name.first} ${item.name.first} ${item.name.last}`}
-                />
-              );
-            }
-          })}
+          {teams
+            ?.slice(0, INITIAL_TEAM_COUNT)
+            .map((item: any, index: number) => (
+              <OurTeams
+                key={index}
+                img={item.picture.large}
+                name={`${item.name.first} ${item.name.last}`}
+              />
+            ))}
         </Marquee>
         <Testimoni datas={teams} />
         <Text
