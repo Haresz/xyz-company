@@ -8,7 +8,7 @@ const initialState: any = {
 
 const actionGetTeams = createAsyncThunk(
   "teams/actionGetTeams",
-  async (qty: any) => {
+  async (qty: number) => {
     const response = await getDataTeams(qty);
     return response.data.results;
   }
