@@ -11,6 +11,7 @@ import { useAppStore } from "@/lib/hooks";
 import Testimoni from "@/components/Testimoni";
 import OurServises from "@/components/OurServises";
 import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const teams: any = useSelector((state: RootState) => state.teamsSlice.teams);
@@ -23,8 +24,10 @@ export default function Home() {
 
   return (
     <div>
+      <Navbar />
       <Hero src={"hero.webp"} />
       <div>
+        <Image src="/favicon.ico" />
         <Box className="flex justify-between items-center my-16 md:mx-20 mx-6">
           <Text
             fontWeight={"semibold"}
