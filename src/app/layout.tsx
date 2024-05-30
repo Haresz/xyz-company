@@ -10,16 +10,12 @@ import StoreProvider from "./StoreProvider";
 export const metadata = {
   title: "xyz company",
   description: "A Frontend Developer Portfolio",
-  icons: {
-    icon: "",
-  },
 };
 
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en" className={fonts.montserrat.variable}>
       <body>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <Providers>
           <StoreProvider>
             <ChakraProvider>

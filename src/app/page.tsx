@@ -27,7 +27,6 @@ export default function Home() {
       <Navbar />
       <Hero src={"hero.webp"} />
       <div>
-        <Image src="/favicon.ico" />
         <Box className="flex justify-between items-center my-16 md:mx-20 mx-6">
           <Text
             fontWeight={"semibold"}
@@ -52,7 +51,6 @@ export default function Home() {
         <Title title="Our Teams" />
         <Marquee className="our-teams flex gap-12 overflow-x-scroll pb-8 mt-16">
           {teams.map((item: any, index: number) => {
-            console.log(index);
             if (index < 7) {
               return (
                 <OurTeams
