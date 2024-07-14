@@ -1,5 +1,3 @@
-Tentu, berikut adalah README yang diperbarui, menggabungkan informasi dari README sebelumnya dengan detail proyek "XYZ Company Profile":
-
 ````markdown
 # XYZ Company Profile
 
