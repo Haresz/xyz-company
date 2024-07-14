@@ -24,7 +24,6 @@ const LinkCustom = (props: any) => {
 };
 
 export default function Navbar() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <HStack

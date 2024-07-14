@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { ChakraProvider } from "@chakra-ui/react";
 import Providers from "./providers";
 import StoreProvider from "./StoreProvider";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "xyz company",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: any) {
         <Providers>
           <StoreProvider>
             <ChakraProvider>
+      <Navbar />
               {children}
               <Footer />
             </ChakraProvider>

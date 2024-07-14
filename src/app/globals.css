@@ -6,7 +6,7 @@
   @apply border-2 border-primary rounded-lg;
 }
 
-.image-container {
+.container .item {
   width: 100%;
   position: unset !important;
 }

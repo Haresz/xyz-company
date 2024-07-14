@@ -24,7 +24,6 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
       <Hero src={"hero.webp"} />
       <div>
         <Box className="flex justify-between items-center my-16 md:mx-20 mx-6">
