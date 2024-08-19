@@ -1,4 +1,4 @@
-import { Box, Text, Heading } from "@chakra-ui/react";
+import { Box, Text, Heading } from '@chakra-ui/react';
 
 export default function CardTeam(props: any) {
   return (
@@ -10,12 +10,11 @@ export default function CardTeam(props: any) {
       <Box
         className="w-full h-[300px] rounded-t-md"
         bgImage={props.img}
-        bgRepeat={"no-repeat"}
-        bgSize={"cover"}
+        bgRepeat={'no-repeat'}
+        bgSize={'cover'}
       >
         <Text className="transition-opacity ease-in-out delay-150 opacity-0 group-hover:opacity-100 h-[294px] pt-[120px] px-4 text-white bg-black bg-opacity-70 font-bold text-center">
-          “Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum,
-          perferendis.”
+          {props.description}
         </Text>
       </Box>
       <div className="content border-t-2 border-primary pt-4 pl-4">

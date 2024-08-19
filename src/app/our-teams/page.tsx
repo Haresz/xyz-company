@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import { RootState } from "@/lib/store";
-import { useSelector } from "react-redux";
-import Hero from "@/components/Hero";
-import CardTeam from "@/components/CardTeam";
+'use client';
+import React from 'react';
+import { RootState } from '@/lib/store';
+import { useSelector } from 'react-redux';
+import Hero from '@/components/Hero';
+import CardTeam from '@/components/CardTeam';
 
 export default function Teams() {
   const teams: any = useSelector((state: RootState) => state.teamsSlice.teams);
@@ -17,6 +17,7 @@ export default function Teams() {
               key={index}
               img={item.picture.large}
               name={item.name.first}
+              description={item.description}
             />
           );
         })}

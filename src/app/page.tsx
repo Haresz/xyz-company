@@ -1,17 +1,16 @@
-"use client";
-import React, { useRef } from "react";
-import { Box, Image, Text } from "@chakra-ui/react";
-import Marquee from "react-fast-marquee";
-import Title from "@/components/Title";
-import OurTeams from "@/components/OurTeams";
-import { actionGetTeams } from "@/lib/features/teams/teamsSlice";
-import { RootState } from "@/lib/store";
-import { useSelector } from "react-redux";
-import { useAppStore } from "@/lib/hooks";
-import Testimoni from "@/components/Testimoni";
-import OurServises from "@/components/OurServises";
-import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
+'use client';
+import React, { useEffect, useRef } from 'react';
+import { Box, Image, Text } from '@chakra-ui/react';
+import Marquee from 'react-fast-marquee';
+import Title from '@/components/Title';
+import OurTeams from '@/components/OurTeams';
+import { actionGetTeams } from '@/lib/features/teams/teamsSlice';
+import { RootState } from '@/lib/store';
+import { useSelector } from 'react-redux';
+import { useAppStore } from '@/lib/hooks';
+import Testimoni from '@/components/Testimoni';
+import OurServises from '@/components/OurServises';
+import Hero from '@/components/Hero';
 
 export default function Home() {
   const teams: any = useSelector((state: RootState) => state.teamsSlice.teams);
@@ -22,14 +21,18 @@ export default function Home() {
     initialized.current = true;
   }
 
+  useEffect(() => {
+    console.log(teams);
+  }, [teams]);
+
   return (
     <div>
-      <Hero src={"hero.webp"} />
+      <Hero src={'hero.webp'} />
       <div>
         <Box className="flex justify-between items-center my-16 md:mx-20 mx-6">
           <Text
-            fontWeight={"semibold"}
-            textAlign={"justify"}
+            fontWeight={'semibold'}
+            textAlign={'justify'}
             className="md:w-8/12 w-full lg:px-8 px-4 mx-auto md:py-10 py-5 border--primary md:text-3xl text-lg"
           >
             &quot;At XYZ Company, we&apos;ve been leading the industry since
@@ -39,7 +42,7 @@ export default function Home() {
           </Text>
           <Image
             className="hidden lg:inline-block"
-            width={"16%"}
+            width={'16%'}
             src="founder.webp"
             alt="Dan Abramov"
           />
@@ -53,6 +56,7 @@ export default function Home() {
             if (index < 7) {
               return (
                 <OurTeams
+                  description={item.description}
                   key={index}
                   img={item.picture.large}
                   name={`${item.name.first} ${item.name.first} ${item.name.last}`}
@@ -64,7 +68,7 @@ export default function Home() {
         <Testimoni datas={teams} />
         <Text
           className="text-center mt-32 mb-16"
-          fontSize={{ lg: "5xl", base: "3xl" }}
+          fontSize={{ lg: '5xl', base: '3xl' }}
         >
           “ Your satisfaction is our priority “
         </Text>

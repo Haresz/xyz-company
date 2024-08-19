@@ -1,6 +1,6 @@
-import { Text } from "@chakra-ui/react";
-import Marquee from "react-fast-marquee";
-import OurTestimoni from "./OurTestimonial";
+import { Text } from '@chakra-ui/react';
+import Marquee from 'react-fast-marquee';
+import OurTestimoni from './OurTestimonial';
 
 export default function Testimoni(props: any) {
   return (
@@ -32,7 +32,7 @@ export default function Testimoni(props: any) {
             return (
               <OurTestimoni
                 key={index}
-                testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta explicabo consectetur adipisci. Dignissimos, hic asperiores."
+                testimoni={item.description}
                 name={`- ${item.name.first}`}
               />
             );
